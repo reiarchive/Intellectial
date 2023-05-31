@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intellectial - Your friendly AI Quiz</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/btn.css" />
+    <script src="js/main.js"></script>
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="thanks" hidden>
+            <div class="thanks__tick">✔ </div>
+            <h1 class="thanks__title"></h1>
+        </div>
+
+        <form class="quiz">
+            <div class="quiz__inner">
+                <div class="topic__box quiz__step">
+                    <div class="question__emoji">💡</div>
+                    <h1 class="quiz__question">Ready to have some quiz today?</h1>
+                    <input type="text" class="quiz_input_topic" placeholder="Submit topic" />
+                    <br>
+                    <div class="answer">
+                        <button id="submit-button" class="submit-button">Submit</button>
+                        <!-- <button class="submit-button">Start!</button> -->
+                    </div>
+                </div>
+
+                <div class="ongoing__quiz quiz__step--current quiz__step" hidden>
+                    <div class="question__emoji">💡</div>
+                    <h1 class="quiz__question"></h1>
+                    <div class="answer__long">
+                        <label data-option="0" class="question__option answer__label__long"></label>
+                    </div>
+                    <div class="answer__long">
+                        <label data-option="1" class="question__option answer__label__long"></label>
+                    </div>
+                    <div class="answer__long">
+                        <label data-option="2" class="question__option answer__label__long"></label>
+                    </div>
+                    <div class="answer__long">
+                        <label data-option="3" class="question__option answer__label__long"></label>
+                    </div>
+                </div>
+
+                <!-- <div data-question="2" class="quiz__step--current quiz__step" hidden>
+                    <div class="question__emoji">👽</div>
+                    <h1 class="quiz__question">Do you believe in aliens?</h1>
+                    <div class="answer">
+                        <label class="answer__label" for="aliens_yes">Proses mengoptimalkan performa program</label>
+                    </div>
+                    <div class="answer">
+                        <label class="answer__label" for="aliens_no">Proses memperbaiki kesalahan (bug) dalam kode program</label>
+                    </div>
+                    <div class="answer">
+                        <label class="answer__label" for="aliens_no">Proses mendokumentasikan kode program</label>
+                    </div>
+                    <div class="answer">
+                        <label class="answer__label" for="aliens_no">Proses mengubah kode program agar lebih efisien</label>
+                    </div>
+
+                </div>
+
+                <div data-question="3" class="quiz__step quiz__summary" hidden>
+
+                    <h1 class="quiz__question">Summary</h1>
+                    <div id="summary"></div>
+                    <div class="submit__container">
+                        <a href="#" class="submit">Submit</a>
+                    </div>
+                </div> -->
+            </div>
+        </form>
+    </div>
+
+    <footer class="bottom">
+        <section class="bottom__container">
+            <div class="progress">
+                <div class="progress__inner"></div>
+            </div>
+            <div class="navigation">
+                <div class="navigation__btn navigation__btn--left"><svg width="20" height="20" viewBox="0 0 24 24">
+                        <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path>
+                    </svg></div>
+                <div class="navigation__btn navigation__btn--right"><svg width="20" height="20" viewBox="0 0 24 24">
+                        <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
+                    </svg></div>
+            </div>
+        </section>
+    </footer>
+
+</body>
+
+
+
+</html>

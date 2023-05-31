@@ -1,0 +1,40 @@
+@keyframes circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes checkmark {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.loading:before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid #A7AACB;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: circle 1s linear infinite;
+    /* margin-right: 10px; */
+}
+
+.checkmark:before {
+    content: "\2713";
+    display: inline-block;
+    font-size: 16px;
+    color: #A7AACB;
+    animation: checkmark 0.3s ease-in-out forwards;
+}
+
