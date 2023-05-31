@@ -18,11 +18,11 @@ const finish = () => {
 }
 
 const renderPage = () => {
+    
+    renderProgress()
 
     if (currentQuestion >= questionAnswer.length) {
-
         finish()
-
         return false;
     }
 
@@ -42,8 +42,11 @@ const renderPage = () => {
     return true;
 }
 
-const nextStep = () => {
+const renderProgress = () => {
+    const percent = ((currentQuestion) / questionAnswer.length) * 100
+    console.log(percent)
 
+    $(".progress__inner").width(percent+"%")
 }
 
 

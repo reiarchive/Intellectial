@@ -10,7 +10,7 @@ const quizController = {
     start : async (req, res) => {
         const messages = [{ role: "system", content: process.env.GPT_SYSTEM }];
 
-        messages.push({ role: "user", content: "Quiz topic : " + req.body.topic + ", Level : Hard"});
+        messages.push({ role: "user", content: "Quiz topic : " + req.body.topic + " with Level Hard"});
         
         try {
             const completion = await openai.createChatCompletion({
