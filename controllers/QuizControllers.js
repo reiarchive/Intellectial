@@ -25,6 +25,7 @@ const merge_json = async (json) => {
 
 const quizController = {
     start: async (req, res) => {
+        let quiz_json
         const messages = [{ role: "system", content: process.env.GPT_SYSTEM }];
 
         messages.push({ role: "user", content: "Make me quiz about " + req.body.topic + " with hard difficulty" });
@@ -35,8 +36,16 @@ const quizController = {
                 messages: messages,
             });
             console.log(completion.data.choices[0].message.content)
+        
 
-            const quiz_json = extract(completion.data.choices[0].message.content)[0]
+            const extract_json = extract(completion.data.choices[0].message.content)
+            
+
+            if (extract_json.length > 1) {
+                quiz_json = await merge_json(quiz_json)
+            } else {
+                quiz_json = extract_json[0]
+            }
 
             if (!quiz_json) {
                 return res.status(201).json({
@@ -44,11 +53,10 @@ const quizController = {
                 });
             }
 
-            console.log(quiz_json)
 
             return res.status(201).send(quiz_json);
         } catch (error) {
-            console.log(error.response);
+            console.log(error);
             console.log(error.response);
             return res.status(201).json({
                 "error": 1
