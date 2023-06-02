@@ -12,6 +12,7 @@ const verify = (topic) => {
 }
 
 const finish = () => {
+    console.log(answer)
     $(".thanks__title").text('You get ' + correctAnswer.toString() + ' Out of ' + questionAnswer.length.toString())
     $(".quiz").hide()
     $(".thanks").show()
